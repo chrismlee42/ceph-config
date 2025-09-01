@@ -13,6 +13,6 @@ labels:
 namespace: ceph
 
 resources:
-  - ceph-cephcluster.yaml
+  # - ceph-cephcluster.yaml
   - ceph-cephblockpool.yaml
   - namespace.yaml
