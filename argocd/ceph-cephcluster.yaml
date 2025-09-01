@@ -1,8 +1,7 @@
 apiVersion: ceph.rook.io/v1
 kind: CephCluster
 metadata:
-  name: my-cluster
-  namespace: rook-ceph # namespace:cluster
+  name: ceph
 spec:
   cephConfig:
     global:
