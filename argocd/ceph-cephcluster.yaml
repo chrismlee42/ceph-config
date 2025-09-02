@@ -11,7 +11,7 @@ spec:
       bluefs_buffered_io: "false"
       mon_data_avail_warn: "10"
   cephVersion:
-    image: quay.io/ceph/ceph:v19
+    image: quay.io/ceph/ceph:v19.2
   crashCollector:
     disable: true
   dashboard:
