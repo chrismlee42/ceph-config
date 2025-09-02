@@ -2,6 +2,7 @@ apiVersion: ceph.rook.io/v1
 kind: CephCluster
 metadata:
   name: ceph
+  namespace: ceph
 spec:
   cephConfig:
     global:
@@ -12,11 +13,13 @@ spec:
       mon_data_avail_warn: "10"
   cephVersion:
     image: quay.io/ceph/ceph:v19.2
+  # clusterMetadata:
+  #   namespace: ceph
   crashCollector:
     disable: true
   dashboard:
     enabled: true
-    allowUnsupported: true
+    # allowUnsupported: true
   dataDirHostPath: /var/lib/rook
   disruptionManagement:
     managePodBudgets: true
@@ -42,6 +45,15 @@ spec:
             storage: 10Gi
   monitoring:
     enabled: true
+  # preparePlacement:
+  #   all:
+  #     tolerations:
+  #       - effect: NoSchedule
+  #         key: node-role.kubernetes.io/control-plane
+  #         operator: Exists
+  #       - effect: NoSchedule
+  #         key: node-role.kubernetes.io/master
+  #         operator: Exists
   priorityClassNames:
     all: system-node-critical
     mgr: system-cluster-critical
@@ -53,6 +65,7 @@ spec:
     #deviceFilter:
     #config:
     #  deviceClass: testclass
+    scheduleAlways: true
     storageClassDeviceSets:
       - name: local-path
         count: 1
@@ -102,7 +115,8 @@ spec:
                       - rook-ceph-osd-prepare
               maxSkew: 1
               # IMPORTANT: If you don't have zone labels, change this to another key such as kubernetes.io/hostname
-              topologyKey: topology.kubernetes.io/hostname
+              # topologyKey: topology.kubernetes.io/zone
+              topologyKey: kubernetes.io/hostname
               whenUnsatisfiable: DoNotSchedule
         # Certain storage class in the Cloud are slow
         # Rook can configure the OSD running on PVC to accommodate that by tuning some of the Ceph internal
