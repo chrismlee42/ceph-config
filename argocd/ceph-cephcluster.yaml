@@ -137,7 +137,7 @@ spec:
                 requests:
                   storage: 10Gi
               # IMPORTANT: Change the storage class depending on your environment
-              storageClassName: local-path
+              storageClassName: local-storage
               volumeMode: Block
               accessModes:
                 - ReadWriteOnce
