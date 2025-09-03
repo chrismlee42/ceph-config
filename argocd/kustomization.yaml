@@ -16,4 +16,4 @@ resources:
   # - https://github.com/rook/rook/raw/refs/tags/v1.18.1/deploy/examples/common.yaml
   - ceph-cephcluster.yaml
   # - ceph-cephblockpool.yaml
-  # - namespace.yaml
+  - namespace.yaml
