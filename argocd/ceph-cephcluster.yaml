@@ -39,7 +39,7 @@ spec:
     allowMultiplePerNode: true
     volumeClaimTemplate:
       spec:
-        storageClassName: local-path
+        storageClassName: local-storage
         resources:
           requests:
             storage: 10Gi
