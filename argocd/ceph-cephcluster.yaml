@@ -39,10 +39,12 @@ spec:
     allowMultiplePerNode: true
     volumeClaimTemplate:
       spec:
-        storageClassName: local-path
+        accessModes:
+          - ReadWriteOnce
         resources:
           requests:
             storage: 10Gi
+        storageClassName: local-path
   monitoring:
     enabled: true
   # preparePlacement:
@@ -133,13 +135,13 @@ spec:
               # annotations:
               #   crushDeviceClass: hybrid
             spec:
+              accessModes:
+                - ReadWriteOnce
               resources:
                 requests:
                   storage: 10Gi
               # IMPORTANT: Change the storage class depending on your environment
               storageClassName: local-path
               # volumeMode: Filesystem
-              accessModes:
-                - ReadWriteOnce
     # useAllNodes: true
     # useAllDevices: true
