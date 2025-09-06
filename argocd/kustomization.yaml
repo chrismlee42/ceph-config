@@ -18,3 +18,4 @@ resources:
   - ceph-cephcluster.yaml
   # - ceph-cephblockpool.yaml
   # - namespace.yaml
+  - rook-ceph-mon-a-persistentvolume.yaml
