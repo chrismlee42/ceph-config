@@ -141,7 +141,7 @@ spec:
                 requests:
                   storage: 10Gi
               # IMPORTANT: Change the storage class depending on your environment
-              storageClassName: local-path
-              # volumeMode: Filesystem
+              storageClassName: local-storage
+              volumeMode: Block
     # useAllNodes: true
     # useAllDevices: true
