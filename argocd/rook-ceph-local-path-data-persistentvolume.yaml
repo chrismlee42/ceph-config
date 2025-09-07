@@ -8,7 +8,7 @@ spec:
   volumeMode: Block
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
+  persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
     # path: /var/lib/rook/local-path-data
