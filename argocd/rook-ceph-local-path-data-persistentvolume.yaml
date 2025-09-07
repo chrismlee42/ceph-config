@@ -11,8 +11,8 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:
-    file: /var/lib/rook/local-path-data
-    # path: /dev/loop23
+    # path: /var/lib/rook/local-path-data
+    path: /dev/loop23
   nodeAffinity:
     required:
       nodeSelectorTerms:
