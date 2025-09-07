@@ -69,7 +69,7 @@ spec:
     #  deviceClass: testclass
     scheduleAlways: true
     storageClassDeviceSets:
-      - name: local-path
+      - name: local-storage-device-set
         count: 1
         # whether to encrypt the deviceSet or not
         encrypted: false
@@ -143,5 +143,5 @@ spec:
               # IMPORTANT: Change the storage class depending on your environment
               storageClassName: local-storage
               volumeMode: Block
-    # useAllNodes: true
-    # useAllDevices: true
+    useAllNodes: true
+    useAllDevices: true
