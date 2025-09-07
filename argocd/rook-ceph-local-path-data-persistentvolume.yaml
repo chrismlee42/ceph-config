@@ -12,7 +12,7 @@ spec:
   storageClassName: local-storage
   local:
     # path: /var/lib/rook/local-path-data
-    path: /dev/loop23
+    path: /dev/loop23p1
   nodeAffinity:
     required:
       nodeSelectorTerms:
