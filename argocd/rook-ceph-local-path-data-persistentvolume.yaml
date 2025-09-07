@@ -7,7 +7,7 @@ spec:
     storage: 10Gi
   volumeMode: Block
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:
@@ -16,7 +16,7 @@ spec:
   nodeAffinity:
     required:
       nodeSelectorTerms:
-      - matchExpressions:
-        # Single-node "cluster" setup, so we can use the hostname of the node where the mon pod is scheduled.
-        - key: kubernetes.io/hostname
-          operator: Exists
+        - matchExpressions:
+          # Single-node "cluster" setup, so we can use the hostname of the node where the mon pod is scheduled.
+          - key: kubernetes.io/hostname
+            operator: Exists
